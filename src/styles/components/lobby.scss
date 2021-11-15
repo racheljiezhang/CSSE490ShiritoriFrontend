@@ -1,0 +1,73 @@
+.lobby-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  margin: auto;
+
+  .room-id-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+
+    span {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+
+      &.code {
+        font-size: 4rem;
+        color: white;
+      }
+    }
+  }
+
+  .loading-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .status-message {
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .puff-loader-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 150px;
+      height: 150px;
+      opacity: 1;
+      transition: opacity 1s;
+
+      &.hidden {
+        opacity: 0;
+        animation: close 1s forwards 1s;
+
+        @keyframes close {
+          from {
+            height: 150px;
+          }
+          to {
+            height: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .fa-window-close {
+    align-self: center;
+    font-size: 3rem;
+    cursor: pointer;
+    color: $mainColor;
+    transition: color 0.3s;
+
+    &:hover {
+      color: red;
+      transition: color 0.3s;
+    }
+  }
+}

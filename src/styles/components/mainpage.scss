@@ -1,0 +1,215 @@
+.main-page-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  height: 100%;
+
+  .header-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    .leaderboard-button {
+      font-family: Roboto;
+      border: none;
+      background: none;
+      color: white;
+      border-radius: 0.25rem;
+      margin: 2rem;
+      font-size: 2rem;
+      padding: 0.5rem;
+      width: 15rem;
+      cursor: pointer;
+      transition: color 0.3s, background-color 0.3s;
+
+      &:hover {
+        color: $mainColor;
+        background-color: white;
+      }
+    }
+  }
+
+  .intro-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+
+    &.hidden {
+      animation: close-intro 0.5s forwards;
+
+      @keyframes close-intro {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(2rem);
+          visibility: hidden;
+          margin: 0;
+        }
+      }
+    }
+
+    .title {
+      font-size: 5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    .nickname-container {
+      padding-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      span {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+  
+      input {
+        border: solid 1px $mainColor;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        background: black;
+        margin-bottom: 2rem;
+        color: white;
+        width: 20rem;
+        align-self: center;
+  
+        :focus {
+          outline: $mainColor;
+        }
+      }
+    }
+  }
+
+  .main-button {
+    font-family: Roboto;
+    border: none;
+    color: white;
+    background-color: $mainColor;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    width: 15rem;
+    cursor: pointer;
+  }
+
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    &.display {
+      opacity: 1;
+      animation: open-menu 0.5s forwards 0.5s;
+
+      @keyframes open-menu {
+        from {
+          opacity: 0;
+          transform: translateY(-2rem);
+          visibility: visible;
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+          visibility: visible;
+        }
+      }
+    }
+
+    .join-lobby-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .fa-window-close {
+        align-self: center;
+        font-size: 3rem;
+        cursor: pointer;
+        color: $mainColor;
+        transition: color 0.3s;
+    
+        &:hover {
+          color: red;
+          transition: color 0.3s;
+        }
+      }
+    }
+
+    .welcome-message {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .active {
+      animation: shift-up-join 0.5s forwards 0.5s;
+
+      @keyframes shift-up-join {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-5rem);
+        }
+      }
+    }
+
+    .hidden {
+      animation: hide-start 0.5s forwards;
+
+      @keyframes hide-start {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(-1rem);
+          visibility: hidden;
+        }
+      }
+    }
+
+    .lg-button {
+      font-family: Roboto;
+      border: none;
+      color: white;
+      background-color: $mainColor;
+      border-radius: 0.25rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      padding: 1rem;
+      width: 15rem;
+      cursor: pointer;
+    }
+
+    input {
+      border: solid 1px $mainColor;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      background: black;
+      margin-bottom: 2rem;
+      color: white;
+      width: 20rem;
+      align-self: center;
+
+      :focus {
+        outline: $mainColor;
+      }
+    }
+  }
+}

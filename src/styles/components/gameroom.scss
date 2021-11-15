@@ -1,0 +1,138 @@
+.game-room-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .host-container {
+    display: flex;
+    flex-direction: column;
+
+    .host-starts {
+      color: $mainColor;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      opacity: 0;
+      animation: fade-down 0.5s forwards 1.5s;
+
+      @keyframes fade-down {
+        from {
+          opacity: 0;
+          transform: translateY(-1rem)
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0)
+        }
+      }
+    }
+  }
+
+  .name-header {
+    font-size: 7.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 1rem 5rem;
+  }
+
+  .versus {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 2rem;
+  }
+
+  .active-game-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    .current-turn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5rem 0;
+
+      span {
+        font-weight: bold;
+        font-size: 5rem;
+        padding-bottom: 2rem;
+      }
+
+      input {
+        border: solid 1px $mainColor;
+        border-radius: 0.25rem;
+        padding: 3rem;
+        background: black;
+        margin-bottom: 2rem;
+        font-size: 3rem;
+        color: white;
+        width: 40rem;
+        align-self: center;
+  
+        :focus {
+          outline: $mainColor;
+        }
+      }
+    }
+
+    .awaiting-turn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5rem 0;
+
+      span {
+        font-weight: bold;
+        font-size: 5rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+    span {
+      margin: 2rem;
+      align-self: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    > div {
+      margin: 2rem;
+    }
+  }
+
+  .end-game-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    span {
+      font-size: 5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .main-button {
+      border: none;
+      font-family: Roboto;
+      color: white;
+      background-color: $mainColor;
+      border-radius: 0.25rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      font-size: 1rem;
+      width: 15rem;
+      cursor: pointer;
+    }
+  }
+}
