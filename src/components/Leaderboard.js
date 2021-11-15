@@ -7,7 +7,7 @@ export default function Leaderboard(props) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("http://localhost:8001/leaderboard")
+    fetch("https://shiritori-backend.herokuapp.com/leaderboard")
     .then(res => res.json())
     .then(result => {
       if (result && result.length > 0) {

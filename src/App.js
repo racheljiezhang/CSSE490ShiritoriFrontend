@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 import socketIOClient from 'socket.io-client';
 
-const ENDPOINT = "http://127.0.0.1:8001/"
+const ENDPOINT = "https://shiritori-backend.herokuapp.com/"
 const socket = socketIOClient(ENDPOINT)
 // const socket = null
 
